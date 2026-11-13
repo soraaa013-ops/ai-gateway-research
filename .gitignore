@@ -10,3 +10,8 @@ artifacts/
 *.key
 __pycache__/
 .DS_Store
+.venv/
+.pytest_cache/
+.coverage
+poc/.runtime/
+*.egg-info/

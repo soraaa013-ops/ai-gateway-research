@@ -1,0 +1,40 @@
+# All credentials and addresses are injected by poc.runtime, never real providers.
+model_list:
+  - model_name: maas-chat
+    litellm_params:
+      model: anthropic/claude-sonnet-4-20250514
+      api_base: os.environ/POC_MAAS_BASE
+      api_key: os.environ/POC_UPSTREAM_KEY
+      input_cost_per_token: 0.000001
+      output_cost_per_token: 0.000002
+    model_info:
+      id: poc-maas-deployment
+  - model_name: local-chat
+    litellm_params:
+      model: openai/poc-local
+      api_base: os.environ/POC_LOCAL_BASE
+      api_key: os.environ/POC_UPSTREAM_KEY
+      input_cost_per_token: 0.000001
+      output_cost_per_token: 0.000002
+    model_info:
+      id: poc-selfhosted-deployment
+router_settings:
+  num_retries: 0
+  timeout: 3
+  allowed_fails: 100
+  fallbacks: []
+litellm_settings:
+  num_retries: 0
+  request_timeout: 3
+  drop_params: false
+  telemetry: false
+  cache: false
+  turn_off_message_logging: true
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY
+  database_url: os.environ/DATABASE_URL
+  store_model_in_db: false
+  store_prompts_in_spend_logs: false
+  disable_spend_logs: false
+  proxy_batch_write_at: 1
+  database_connection_pool_limit: 5
