@@ -14,9 +14,9 @@
 
 ## 短名单建议
 
-默认 LiteLLM 与 Higress，对照应用集成和基础设施治理路线。没有 Kubernetes 经验不必为候选引入 Kubernetes；Higress 多模型指南也包含 Docker 部署。[部署指南](https://higress.ai/en/docs/ai/scene-guide/multi-proxy/)
+面向最多约 70–80 名内部用户，先直接验证 LiteLLM 开源自托管，复用后台和基础功能。按真实缺口再选择一个备选：管理体验优先看 New API，已有网关运维体系优先看 Higress。无需默认同时部署两个候选。
 
-若最急需后台发 Key、渠道和用量管理，以 New API 替换第二候选。先用真实认证和客户端淘汰不适配产品，不同时部署七套。
+开发功能映射、企业版边界和最小拓扑见[小团队开源方案](10-open-source-plan.md)。不因用户少忽略权限与备份，也不以人数直接推导并发或引入多集群。
 
 ## 决策方法
 

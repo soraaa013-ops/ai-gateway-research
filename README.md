@@ -4,12 +4,14 @@
 
 **建议采用统一管理、多协议入口和原生能力保留的架构。先验证现成网关，再补齐内部认证、模型目录与调试体验。**
 
-研究日期：2026-11-13。当前为调研、设计建议和验收方案，不包含已部署的网关。候选能力依据官方文档；具体版本与真实上游组合仍需 POC 验证。
+研究日期：2026-11-13。适用规模：最多约 70–80 名内部用户。当前为调研、设计建议和验收方案，不包含已部署的网关。候选能力依据官方文档；具体版本与真实上游组合仍需 POC 验证。
 
 ## 阅读路径
 
 | 文档 | 回答的问题 |
 | --- | --- |
+| [可实施功能清单](docs/09-feature-checklist.md) | 按模块拆分功能、验收、依赖及开源实现方式 |
+| [小团队开源方案](docs/10-open-source-plan.md) | 如何用 LiteLLM 等直接交付服务，减少自研 |
 | [研究结论](docs/01-findings.md) | 产品边界是什么，为什么不能只统一请求格式 |
 | [功能需求](docs/02-requirements.md) | 首期必须提供什么，如何验收 |
 | [协议兼容](docs/03-compatibility.md) | 内部 MaaS 与自部署模型如何适配 |
@@ -19,7 +21,7 @@
 | [实施路线](docs/07-roadmap.md) | 如何分阶段交付，谁负责什么 |
 | [来源与证据](docs/08-sources.md) | 官方出处、证据范围与维护方法 |
 
-配套材料：[上游盘点表](templates/upstream-inventory.csv)、[兼容性矩阵](templates/compatibility-matrix.csv)、[POC 记录表](templates/poc-results.csv)、[决策记录](templates/decision-record.md)、[模型目录示例](examples/model-catalog.json)。
+配套材料：[开发功能清单 CSV](templates/feature-backlog.csv)、[上游盘点表](templates/upstream-inventory.csv)、[兼容性矩阵](templates/compatibility-matrix.csv)、[POC 记录表](templates/poc-results.csv)、[决策记录](templates/decision-record.md)、[模型目录示例](examples/model-catalog.json)。
 
 ## 场景假设
 
@@ -30,6 +32,6 @@
 
 ## 初步决策
 
-优先做 LiteLLM 与 Higress 的适配性 POC：前者作为多协议和开发集成候选，后者作为网关治理与基础设施集成候选。若首要需求是快速发 Key 和渠道管理，可用 New API 替换第二个候选。此排序是场景判断，不是实测排名。
+优先直接验证 LiteLLM 开源自托管，复用管理台、虚拟 Key 和模型路由；管理员辅助流程可满足首期。只针对真实缺口补 MaaS 适配或薄门户。New API 为管理体验导向的备选；已有网关体系时评估 Higress。先试一个主候选，再按失败原因选择一个备选，不从零自研整个网关。
 
 首期成功标准是开发者能拿到内部 Key、找到可用模型、完成真实工具调用，并凭请求 ID 解释失败原因。模型数量和厂商性能宣传不作为主要验收标准。

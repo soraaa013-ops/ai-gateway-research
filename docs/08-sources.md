@@ -25,3 +25,13 @@
 文档确认不代表实测；实测确认必须有固定版本、输入、预期与证据；设计建议包括架构、优先级与权重；证据不足记待验证。
 
 当前没有实测排名、实际成本或内部系统细节。更新时记录核对日期与来源。公开证据使用合成数据，真实追踪和账单存于私有系统。
+
+## 小团队方案补充来源
+
+- [LiteLLM 快速开始](https://docs.litellm.ai/docs/proxy/docker_quick_start)：网关、PostgreSQL 与基础使用路径。
+- [LiteLLM 管理台](https://docs.litellm.ai/docs/proxy/ui)：模型、Key 和用量管理入口。
+- [兼容上游](https://docs.litellm.ai/docs/providers/openai_compatible)：自定义兼容服务接入。
+- [企业功能](https://docs.litellm.ai/docs/enterprise)与[许可证](https://github.com/BerriAI/litellm/blob/main/LICENSE)：企业能力和目录授权边界。
+- [New API 官方仓库](https://github.com/QuantumNous/new-api)：备选网关能力方向。
+
+本轮用户规模来自需求约束；部署、试验并发档位与复用范围是设计建议，非已测容量。
