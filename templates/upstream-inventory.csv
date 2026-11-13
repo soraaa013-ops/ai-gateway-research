@@ -1,0 +1,3 @@
+upstream_id,kind,protocol,auth_type,model_alias,deployment_revision,quota_scope,owner_role,status
+maas-example,internal_maas,to_verify,to_verify,example-chat,to_verify,to_verify,platform-owner,not_tested
+self-hosted-example,self_hosted,to_verify,to_verify,example-local,to_verify,to_verify,inference-owner,not_tested

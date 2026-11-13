@@ -1,0 +1,40 @@
+{
+  "description": "Design example only; not a runnable gateway configuration. All values are synthetic.",
+  "schema_version": "0.1",
+  "models": [
+    {
+      "alias": "example-chat",
+      "upstream_kind": "internal_maas",
+      "endpoint": "https://maas.example.invalid/v1",
+      "credential_ref": "secret-reference-placeholder",
+      "deployment_revision": "to-verify",
+      "capabilities": {
+        "chat": "not_tested",
+        "streaming": "not_tested",
+        "tools": "not_tested",
+        "structured_output": "not_tested"
+      },
+      "debug_policy": {
+        "pin_deployment": true,
+        "cross_model_fallback": false,
+        "gateway_response_cache": false,
+        "reject_unsupported_parameters": true
+      }
+    },
+    {
+      "alias": "example-local",
+      "upstream_kind": "self_hosted",
+      "endpoint": "https://inference.example.invalid/v1",
+      "engine_version": "to-verify",
+      "weights_revision": "to-verify",
+      "quantization": "to-verify",
+      "chat_template_revision": "to-verify",
+      "tool_parser": "to-verify",
+      "capabilities": {
+        "chat": "not_tested",
+        "tools": "not_tested"
+      },
+      "cost_basis": "internal_allocation_not_vendor_billing"
+    }
+  ]
+}

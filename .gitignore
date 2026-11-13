@@ -1,0 +1,12 @@
+# Private research material
+.env
+.env.*
+!.env.example
+private/
+local/
+artifacts/
+*.log
+*.pem
+*.key
+__pycache__/
+.DS_Store

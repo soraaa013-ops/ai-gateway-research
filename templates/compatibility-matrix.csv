@@ -1,0 +1,2 @@
+client_version,gateway_version,upstream_id,model_revision,protocol,feature,status,evidence_ref,checked_at
+to_fill,to_fill,synthetic-example,to_fill,chat_completions,parallel_tool_roundtrip,not_tested,,
